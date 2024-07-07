@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+    --white: #fff;
+}
+
+body {
+    font-family: "Kumbh Sans", sans-serif;
+    background: linear-gradient(180deg, var(--Soft-violet), var(--Soft-blue));
+    height: 100vh;
+    font-size: 12px;
+}
+
+/* по макету размер белой части 325х540 */
+
+.main-container {
+    background-color: var(--white);
+    width: 330px;
+    min-height: 536px;
+    margin: 147px auto 30px;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0px 10px 40px var(--Very-dark-desaturated-blue);
+}
+
+.main-container__images-image {
+    display: block;
+    /* ширина рисунка по макету */
+    width: 240px;
+    /* рисунок встал по середине верхнего края */
+    margin: -130px auto 0;
+}
+
+.main-container__images-shadow {
+    width: 248px;
+    margin: -75px auto 0;
+    content: url('./images/bg-pattern-mobile.svg');
+}
+
+.main-container__content-title {
+    margin: 24px 0 30px;
+    font-size: 2.6em;
+    text-align: center;
+}
+
+.main-container__content-details {
+    position: relative;
+    margin: 16px 0;
+    font-size: 1.05em;
+}
+
+.main-container__content-details[open] {
+    font-weight: 700;
+}
+
+.main-container__content-details[open] .main-container__content-details-icon {
+    transform: rotate(180deg);
+    transition: 300ms;
+}
+
+.main-container__content-details-summary {
+    list-style: none;
+}
+
+.main-container__content-details-summary:hover {
+    cursor: pointer;
+    color: var(--Soft-red);
+    font-weight: 700;
+}
+
+.main-container__content-details-paragraph {
+    color: var(--Dark-grayish-blue);
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.main-container__content-line {
+    border-color: transparent;
+    border-bottom-color: var(--Light-grayish-blue);
+}
+
+.main-container__content-details-icon {
+    position: absolute;
+    right: 5px;
+    transition: 300ms;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* --------DESCTOP------------------------ */
+
+@media (min-width:1044px) {
+    /* размер блок 920х510 */
+    .main-container {
+        width: 920px;
+        display: flex;
+        background-image: url('./images/bg-pattern-desktop.svg');
+        background-position-x: -530px;
+        background-position-y: -281px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .main-container__images,
+    .main-container__content {
+        width: 100%;
+    }
+
+    .main-container__images-image {
+        width: 474px;
+        margin: 67px 0 0 -130px;
+    }
+
+    .main-container__images-shadow {
+        content: '';
+    }
+
+    .main-container__content {
+        padding: 15px 80px 20px 40px;
+    }
+
+    .main-container__content-title {
+        text-align: left;
+        margin-bottom: 32px;
+    }
+
+    .main-container__content-details {
+        margin: 26px 0;
+    }
+}
